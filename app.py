@@ -13,7 +13,7 @@ logger.remove()
 logger.add(sys.stderr, level=app_settings.log_level)
 
 # Combine clean shiny UI with CSS and external resources
-ui_with_css = ui.TagList(ui.tags.link(href="style.css", rel="stylesheet"), get_dashboard_ui())
+ui_with_css = ui.TagList(ui.tags.link(href="app.min.css", rel="stylesheet"), get_dashboard_ui())
 
 app_dir = Path(__file__).parent
 app = App(ui_with_css, server, static_assets=app_dir / "www")
